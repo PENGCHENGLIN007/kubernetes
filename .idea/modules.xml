@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/kubernetes.iml" filepath="$PROJECT_DIR$/kubernetes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web_no_db/web_no_db.iml" filepath="$PROJECT_DIR$/web_no_db/web_no_db.iml" />
     </modules>
   </component>
 </project>

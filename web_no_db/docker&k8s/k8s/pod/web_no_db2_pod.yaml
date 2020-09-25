@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-no-db
+  labels:
+    name: web-no-db
+spec:
+  containers:
+    - name: my-web-no-db
+      image: webapp:arm
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 8080
+          name: web-port
+          hostPort: 8082
+          protocol: TCP

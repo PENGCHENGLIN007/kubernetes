@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: pcl
+  name: myhelloworld-deployment
+  labels:
+    app: myhelloworld-d
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: myhelloworld-d
+  template:
+    metadata:
+      labels:
+        app: myhelloworld-d
+    spec:
+      containers:
+        - name: helloworld-d
+          imagePullPolicy: IfNotPresent
+          image: pcl/web_no_db2
+          ports:
+            - containerPort: 8080

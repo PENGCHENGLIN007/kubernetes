@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: web-no-db2
+  namespace: pcl
+  labels:
+    app: hellworld
+    tier: web-no-db2
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      tier: web-no-db2
+    matchExpressions:
+      - key: tier
+        operator: In
+        values: [web-no-db2]
+  template:
+    metadata:
+      labels:
+        app: hellworld
+        tier: web-no-db2
+    spec:
+      containers:
+        - name: tomcat-web
+          image: pcl/web_no_db2
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          ports:
+            - containerPort: 8080
+              hostPort: 8085
+              hostIP: 0.0.0.0

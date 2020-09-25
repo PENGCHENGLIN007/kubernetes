@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="web_no_db:war exploded">
+    <output-path>$PROJECT_DIR$/web_no_db/target/web_no_db</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>web_no_db</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="web_no_db" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/web_no_db/target/web_no_db/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="web_no_db/web/Web" />
+    </root>
+  </artifact>
+</component>

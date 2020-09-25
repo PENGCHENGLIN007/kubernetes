@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pv001-c1
+spec:
+  storageClassName: slow1
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 200Mi

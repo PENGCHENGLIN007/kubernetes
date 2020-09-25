@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-pv-web-no-db2
+spec:
+  volumes:
+    - name: pod-pv-storage
+      persistentVolumeClaim:
+        claimName: pv002-c1
+  containers:
+    - name: pod-pv-web-no-db2
+      imagePullPolicy: IfNotPresent
+      image: pcl/web_no_db2
+      ports:
+        - containerPort: 80
+          name: http-server
+      volumeMounts:
+        - mountPath: "/usr/local/tomcat/webapps/web_no_db"
+          name: pod-pv-storage
