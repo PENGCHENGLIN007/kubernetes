@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-nfs-mysql01                     #创建的pv名称可创建多个.
+  namespace: pcl                    #属于的命名空间
+spec:
+  capacity:
+    storage: 10Gi                        #创建的pv容量为1G
+  accessModes:
+    - ReadWriteOnce                       #pv的访问模式:可读可写可挂在多个节点
+  persistentVolumeReclaimPolicy: Retain #回收策略
+  #storageClassName: pv-nfs-mysql
+  nfs:                                  #创建的pv数据来源
+    path: /root/pcl/k8s/mysql/mysql-pv1                     #数据源目录
+    server: 172.16.12.107                #数据源ip
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-nfs-mysql02                     #创建的pv名称可创建多个.
+  namespace: pcl                    #属于的命名空间
+spec:
+  capacity:
+    storage: 10Gi                        #创建的pv容量为1G
+  accessModes:
+    - ReadWriteOnce                       #pv的访问模式:可读可写可挂在多个节点
+  persistentVolumeReclaimPolicy: Retain #回收策略
+  #storageClassName: pv-nfs-mysql
+  nfs:                                  #创建的pv数据来源
+    path: /root/pcl/k8s/mysql/mysql-pv2                     #数据源目录
+    server: 172.16.12.107                #数据源ip
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-nfs-mysql03                     #创建的pv名称可创建多个.
+  namespace: pcl                    #属于的命名空间
+spec:
+  capacity:
+    storage: 10Gi                        #创建的pv容量为1G
+  accessModes:
+    - ReadWriteOnce                       #pv的访问模式:可读可写可挂在多个节点
+  persistentVolumeReclaimPolicy: Retain #回收策略
+  #storageClassName: pv-nfs-mysql
+  nfs:                                  #创建的pv数据来源
+    path: /root/pcl/k8s/mysql/mysql-pv3                    #数据源目录
+    server: 172.16.12.107                #数据源ip

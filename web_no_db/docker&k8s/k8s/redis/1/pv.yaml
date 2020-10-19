@@ -1,0 +1,88 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv1
+  namespace: pcl
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 172.16.44.28
+    path: /root/pcl/nfs/redis/data1
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv2
+  namespace: pcl
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 172.16.44.28
+    path: /root/pcl/nfs/redis/data2
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv3
+  namespace: pcl
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 172.16.44.28
+    path: /root/pcl/nfs/redis/data3
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv4
+  namespace: pcl
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 172.16.44.28
+    path: /root/pcl/nfs/redis/data4
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv5
+  namespace: pcl
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 172.16.44.28
+    path: /root/pcl/nfs/redis/data5
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv6
+  namespace: pcl
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 172.16.44.28
+    path: /root/pcl/nfs/redis/data6
