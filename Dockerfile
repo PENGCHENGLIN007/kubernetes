@@ -1,5 +1,5 @@
 #版本信息
-FROM tomcat
+FROM daocloud.io/library/tomcat:8.0.17-jre8
 
 WORKDIR /usr/local/tomcat/webapps
 
