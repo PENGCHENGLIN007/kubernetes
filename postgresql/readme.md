@@ -1,35 +1,34 @@
-##创建pv
-kubectl create -f pv.yaml 
+##创建postgresql集群
 
-##创建stolon
-kubectl apply -f stolon.yaml
+###创建pv
+kubectl create -f pv.yaml
 
-
-##创建role
+###创建role
 kubectl apply -f role.yaml
 
-##创建rolebinding
+###创建rolebinding
 kubectl apply -f role-binding.yaml
 
 
-##初始化启动
+###初始化启动
 kubectl run -i -t stolonctl --image=172.16.44.28:5000/sorintlab/stolon:master-pg10 --restart=Never --rm -- /usr/local/bin/stolonctl --cluster-name=kube-stolon --store-backend=kubernetes --kube-resource-kind=configmap init
 
-##创建sentinel
+###创建sentinel
 kubectl create -f stolon-sentinel.yaml
 
-##创建密码
+###创建密码
 kubectl  create -f secret.yaml 
 
 
-##创建实例
+###创建实例
 kubectl apply -f stolon-keeper.yaml
 
-##创建代理
+###创建代理
 kubectl create  -f stolon-proxy.yaml
 
-##创建服务
+###创建服务
 kubectl create -f stolon-proxy-service.yaml
+
 ##查询
 
 kubectl get pvc
